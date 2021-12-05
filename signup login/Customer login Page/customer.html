@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="customer.css" />
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNW_WSIMrxLcCe4_bR_R_uk1-6zgBNVcY",
+      authDomain: "hackathon-practice-3bb8d.firebaseapp.com",
+      projectId: "hackathon-practice-3bb8d",
+      storageBucket: "hackathon-practice-3bb8d.appspot.com",
+      messagingSenderId: "881121137263",
+      appId: "1:881121137263:web:2915d9e9b05e2f5830339a",
+      measurementId: "G-P866997XS0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+</head>
+
+<body>
+  <div class="as__body">
+    <main class="
+          w-100
+          h-100
+          d-flex
+          justify-content-center
+          align-items-center
+          px-4
+        ">
+      <div class="col-xl-4 col-md-6 col-sm-9 col-11 main__div">
+        <h2 class="text-center primaryColor mt-4">Sign up</h2>
+
+        <div class="d-flex flex-column justify-content-center px-4 form__div">
+          <div class="">
+            <label>
+              Username
+              <span id="usernameError" class="errorplacement">
+                <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                <span class="text__error"></span>
+              </span>
+              <div class="mt-1">
+                <input autocomplete="off" onkeyup="capsLockOn(event)" id="username" type="text" maxlength="15" />
+              </div>
+            </label>
+          </div>
+
+          <div class="mt-4">
+            <label>
+              Email
+              <span id="emailError" class="errorplacement">
+                <span class="fontawesome__error"><i class="" aria-hidden="true"></i>
+                  </i></span>
+                <span class="text__error"></span>
+              </span>
+              <div class="mt-1">
+                <input type="text" autocomplete="off" onkeyup="capsLockOn(event)" id="email" />
+              </div>
+            </label>
+          </div>
+
+          <div class="mt-4">
+            <label>
+              Password
+              <span id="passwordError" class="errorplacement">
+                <span class="fontawesome__error"><i class="" aria-hidden="true"></i>
+                  </i></span>
+                <span class="text__error"></span>
+              </span>
+              <div class="mt-1">
+                <input id="password" onkeyup="capsLockOn(event)" type="password" />
+              </div>
+            </label>
+          </div>
+          <div class="mt-4">
+            <label>
+              Number
+              <span id="numberError" class="errorplacement">
+                <span class="fontawesome__error"><i class="" aria-hidden="true"></i>
+                  </i></span>
+                <span class="text__error"></span>
+              </span>
+              <div class="mt-1">
+                <input id="number" onkeyup="capsLockOn(event)" type="tel" maxlength="11" />
+              </div>
+            </label>
+          </div>
+          <div class="mt-4">
+            <label>
+              Country
+              <span id="countryError" class="errorplacement">
+                <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                <span class="text__error"></span>
+              </span>
+              <div class="mt-1">
+                <select id="country">
+                  <option value="" disabled selected>Select Country</option>
+                  <option onclick="option()" value="Pakistan">Pakistan</option>
+                </select>
+              </div>
+            </label>
+          </div>
+          <div class="mt-4">
+            <label>
+              City
+              <span id="cityError" class="errorplacement">
+                <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                <span class="text__error"></span>
+              </span>
+              <div class="mt-1">
+                <select id="city" onchange="checkCity()">
+                  <option value="" disabled selected>Select City</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Lahore">Lahore</option>
+                </select>
+              </div>
+            </label>
+          </div>
+          <div class="mt-3 mb-3">
+            <button id='submitBtn' class="mt-1">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="customer.js"></script>
+</body>
+
+</html>

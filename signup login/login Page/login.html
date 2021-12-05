@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCNW_WSIMrxLcCe4_bR_R_uk1-6zgBNVcY",
+        authDomain: "hackathon-practice-3bb8d.firebaseapp.com",
+        projectId: "hackathon-practice-3bb8d",
+        storageBucket: "hackathon-practice-3bb8d.appspot.com",
+        messagingSenderId: "881121137263",
+        appId: "1:881121137263:web:2915d9e9b05e2f5830339a",
+        measurementId: "G-P866997XS0",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </head>
+  <body>
+    <div class="as__body">
+      <main
+        class="
+          w-100
+          d-flex
+          justify-content-center
+          align-items-center
+          px-4
+        "
+      >
+        <div class="col-xl-4 col-md-6 col-sm-9 col-12 main__div px-4 pb-3">
+          <h2 class="text-center primaryColor py-3 mb-0">Log in</h2>
+          <div class="d-flex choosAcc justify-content-between position-relative">
+            <span class="position-absolute"></span>
+            <button id="restaurant" onclick="toNavigate(this,'restaurantUsers')" class="py-2 w-100">Restaurant</button>
+            <button id="customer" onclick="toNavigate(this,'customers')" class="py-2 w-100">Customer</button>
+          </div>
+          <div class="form__div w-100 px-4 mt-2 pb-1">
+            <div class="email__label  mt-3">
+                <label class="w-100 position-relative">
+                    Email
+                    <span id="emailError" class="errorplacement  dangerColor position-absolute end-0">
+                      <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                      <span class="text__error"></span>
+                    </span>
+                    <div class="mt-2 w-100">
+                      <input id="email" onkeyup="capsLockOn(event)" autocomplete="off" type="text">
+                    </div>
+                </label>
+            </div>
+            <div class="password__label mt-3">
+                <label class="w-100 position-relative">
+                    Password
+                    <span id="passwordError" class="errorplacement dangerColor  position-absolute end-0">
+                      <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                      <span class="text__error"></span>
+                    </span>
+                    <div class="errorplacement"></div>
+                    <div class="mt-2 w-100">
+                      <input id="password" onkeyup="capsLockOn(event)" type="password">
+                    </div>
+                </label>
+            </div>
+            <div class="loginBtn mt-4 text-center">
+                <button  id="logIn" >Log in</button>
+                <div class="mt-2">OR</div>
+            </div>
+          </div>
+          <div class="createAccount text-center mt-2 px-4">
+              <button onclick="tocreateAcc()">Create Account</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="lognin.js"></script>
+  </body>
+</html>

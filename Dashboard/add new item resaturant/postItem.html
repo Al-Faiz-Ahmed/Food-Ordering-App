@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="postItem.css" />
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCNW_WSIMrxLcCe4_bR_R_uk1-6zgBNVcY",
+        authDomain: "hackathon-practice-3bb8d.firebaseapp.com",
+        projectId: "hackathon-practice-3bb8d",
+        storageBucket: "hackathon-practice-3bb8d.appspot.com",
+        messagingSenderId: "881121137263",
+        appId: "1:881121137263:web:2915d9e9b05e2f5830339a",
+        measurementId: "G-P866997XS0",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </head>
+
+  <body>
+    <div class="as__body">
+      <main id="main"
+        class="
+          w-100
+          h-100
+          justify-content-center
+          align-items-center
+          px-4
+        "
+      >
+        <div class="col-xl-4 col-md-5 col-sm-8 col-11 main__div">
+          <div class="d-flex flex-column justify-content-center p-4 form__div">
+                <div class="forcross m-0 p-0" onclick="goback()"><i class="fa fa-plus-circle m-0 p-0" aria-hidden="true"></i></div>
+
+              <h4 id="userName" class="mb-4 "></h4>
+            <div class="w-100">
+              <label class="w-100">
+                <div class="w-100">
+                    <div class="forPictureBtn py-3" id="addbtntoremove">
+                        <input type="file" id="Imagefile" onchange="getFoodImage()" hidden />
+                        <i class="fa fa-plus-circle me-1" aria-hidden="true"></i>
+                        <br />
+                        Add Picture
+                    </div>
+                  <div class="forDispalyImg" id="imageshowhere"></div>
+                </div>
+              </label>
+              </div>
+            <div class="w-100 mt-3">
+              <label class="w-100">
+                Item Name
+                <span id="itemNameError" class="errorplacement">
+                    <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                    <span class="text__error"></span>
+                </span>
+                <div class="w-100"><input type="text" onkeyup="capsLockOn(event)" id="name" /></div>
+              </label>
+            </div>
+            <div class="w-100 mt-3">
+              <label class="w-100">
+                Price
+                <span id="priceError" class="errorplacement">
+                    <span class="fontawesome__error"><i class="" aria-hidden="true"></i></span>
+                    <span class="text__error"></span>
+                </span>
+                <div class="w-100"><input type="text" id="price" onkeyup="capsLockOn(event)" /></div>
+              </label>
+            </div>
+            <div class="mt-3 mb-3">
+              <button id="submitBtn" class="mt-1 submitBtn" onclick>
+                 
+                Post Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="positem.js"></script>
+  </body>
+</html>

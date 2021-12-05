@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", helvetica, sans-serif;
+}
+:root {
+  --prim-bright: #e9eced;
+  --prim-libit: #a5b2b5;
+  --primary: #6e8387;
+  --prim-lidrk: #4a575a;
+  --prim-dark: #1c2122;
+  --light: #faf3dd;
+  --dark: #1d1d1d;
+  --danger: #db504a;
+  --success: #78c996;
+}
+
+body {
+  background-color: var(--light);
+}
+body .as__body {
+  width: 100%;
+  min-height: 100vh;
+  color: var(--dark);
+}
+.primaryColor {
+  color: var(--primary);
+}
+.lightColor {
+  color: var(--light);
+}
+.darkColor {
+  color: var(--dark);
+}
+.dangerColor {
+  color: var(--danger);
+}
+.success {
+  color: var(--success);
+}
+header {
+  display: none;
+  background-color: var(--light);
+  position: sticky;
+  top: 0px;
+  z-index: 11;
+}
+main {
+  display: none;
+}
+.main__div {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 50px;
+  background-color: var(--primary);
+  position: sticky;
+  top: 20px;
+}
+.navigate {
+  color: var(--light);
+  font-size: 20px;
+}
+.forActionButton {
+  display: flex;
+}
+
+.forActionButton button {
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: var(--light);
+  transition: all 0.3s;
+}
+.for-logIn button {
+  font-size: 18px;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+.for-logIn button:hover {
+  text-decoration: underline currentColor;
+  border-radius: 4px;
+  opacity: 1;
+}
+.for-signUp button {
+  opacity: 0.8;
+  border-radius: 4px;
+  border: 2px solid var(--light);
+}
+.for-signUp button:hover {
+  opacity: 1;
+}
+
+.row * {
+  transition: all 0.5s linear;
+}
+
+.forImage {
+  margin: auto;
+  border-radius: 8px;
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.cardForItem {
+  border-radius: 8px;
+  background-color: var(--prim-lidrk);
+  color: var(--light);
+  box-shadow: 0px 25px 40px #3c47495e;
+}
+
+.forOrderBtn button {
+  color: var(--light);
+  outline: none;
+  border: none;
+  background-color: var(--prim-dark);
+  padding: 5px 20px;
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: all 0.3s linear;
+}
+.forOrderBtn button:hover {
+  box-shadow: 0 0 0 0.3rem var(--primary);
+  opacity: 1;
+}
+
+.forMenu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .forMediaActionButton {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .forMenu {
+    width: 40px;
+    text-align: center;
+    display: block;
+    color: var(--light);
+    cursor: pointer;
+    line-height: 40px;
+  }
+  .forActionButton {
+    display: none;
+  }
+  .forMediaActionButton {
+    display: none;
+    flex-direction: column;
+    pointer-events: none;
+    position: absolute;
+    padding: 15px;
+    top: 60px;
+    right: 0px;
+    background-color: var(--primary);
+    border-radius: 8px;
+    width: calc(100% - 15px);
+    max-width: 250px;
+  }
+  .forMediaActionButton .for-logIn,
+  .forMediaActionButton .for-signUp {
+    margin-left: 0px !important;
+  }
+
+  .forMediaActionButton .for-logIn button {
+    width: 100%;
+    color: var(--light);
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+  .forMediaActionButton .for-signUp button {
+    margin-top: 10px;
+    width: 100%;
+    color: var(--light);
+    background-color: transparent;
+    outline: none;
+    border: 2px solid var(--light);
+  }
+}
+
+@media screen and (max-width: 560px) and (min-width: 481px) {
+  .widthformedia {
+    width: 100%;
+  }
+  .cardForItem {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .remaining-space {
+    flex: 2;
+  }
+  .forItemName {
+    margin-top: 0px !important;
+  }
+  .forImage {
+    flex: 1;
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 578px) {
+  .row {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .widthformedia {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .widthformedia {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu',helvetica,sans-serif;
+    
+}
+:root{
+    --prim-bright:#E9ECED;
+    --prim-libit:#A5B2B5;
+    --primary:#6E8387;
+    --prim-lidrk:#4A575A;
+    --prim-dark:#1C2122;
+    --light:#FAF3DD;
+    --dark:#1d1d1d;
+    --danger:#DB504A;   
+    --success:#78C996;
+}
+
+body{
+    background-color: var(--light);
+}
+body .as__body{
+    
+    width: 100%;
+    height: 100vh;
+    color: var(--dark);
+}
+.primaryColor{
+    color:var(--primary);
+}
+.lightColor{
+    color:var(--light);    
+}
+.darkColor{
+    color:var(--dark);    
+}
+.dangerColor{
+    color:var(--danger);    
+}
+.success{
+    color:var(--success);    
+
+}
+.main__div{
+    border: 3px solid var(--primary);
+    border-radius: 8px;
+
+}
+.form__div{
+    margin-top: 30px;
+}
+.form__div label{
+    position: relative;
+    /* border: 2px solid red; */
+    width: 100%;
+    color: var(--primary);
+    font-size: 18px;
+}
+.form__div .errorplacement{
+    position: absolute;
+    right: 0;
+    color: none;
+}
+.form__div .text__error{
+ color: var(--danger);
+}
+.form__div label div input{
+    padding-left: 5px;
+    border: 2px solid var(--primary);
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+    background-color: transparent;
+
+}
+.form__div div button{
+    padding:6px 0;
+    font-size: 18px;
+    color: var(--light);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    background-color: var(--primary);
+    opacity: 0.3;
+    cursor: auto;
+    transition:all 0.5s;
+
+}
+.form__div label div select{
+    padding-left: 5px;
+    border: 2px solid var(--primary);
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+    background-color: transparent;
+
+}
+.form__div label div select option{
+    padding-left: 5px;
+    border: 2px solid var(--primary);
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+    background-color: transparent;
+
+}
+@media only screen and (max-width:425px) {
+    .fontawesome__error{
+      font-size: 14px;
+  
+    }
+    .text__error{
+      font-size: 14px;
+     }
+  }
